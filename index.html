@@ -53,7 +53,8 @@
 
 	<div id="main-content">
 		<section class="hero-section">
-			<img id="hero-image" src="aset/gedung1.jpeg" alt="Hero Image" />
+			<img id="hero-image" src="aset/gedung1.jpeg" alt="Hero Image" class="current-hero-image" />
+			<img id="next-hero-image" src="aset/gedung2.jpeg" alt="Next Hero Image" class="next-hero-image" />
 			<div class="hero-content">
 				<p class="hero-subtitle">SELAMAT DATANG DI</p>
 				<h1 class="hero-title">WEBSITE RESMI YLBH</h1>
@@ -313,18 +314,26 @@
 			});
 		});
 
-		// JavaScript untuk slideshow gambar hero
+		// JavaScript untuk slideshow gambar hero dengan efek morph (crossfade)
 		let currentImageIndex = 1;
 		const totalImages = 5;
-		const heroImage = document.getElementById('hero-image');
+		const currentHeroImage = document.getElementById('hero-image');
+		const nextHeroImage = document.getElementById('next-hero-image');
 
 		function changeHeroImage() {
-			currentImageIndex = (currentImageIndex % totalImages) + 1;
-			heroImage.src = `aset/gedung${currentImageIndex}.jpeg`;
+			const nextIndex = (currentImageIndex % totalImages) + 1;
+			nextHeroImage.src = `aset/gedung${nextIndex}.jpeg`;
+			nextHeroImage.style.opacity = 1;
+
+			setTimeout(() => {
+				currentHeroImage.src = nextHeroImage.src;
+				nextHeroImage.style.opacity = 0;
+				currentImageIndex = nextIndex;
+			}, 200); // Durasi transisi sama dengan CSS transition (0.2s)
 		}
+
 		// Ganti gambar setiap 4 detik
-		setInterval(changeHeroImage, 4000);
+		setInterval(changeHeroImage, 3000);
 	</script>
 </body>
-
 </html>
