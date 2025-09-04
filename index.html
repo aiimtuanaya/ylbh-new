@@ -198,8 +198,8 @@
 
 		<section class="section-padding call-to-action bg-dark">
 			<div class="container text-center">
-				<h3 class="cta-text">DARE TO DREAM <span class="separator">|</span> MAKING IT POSSIBLE <span
-						class="separator">|</span> YOUR SOLUTIONS START HERE</h3>
+				<h3 class="cta-text">YLBH <span class="separator">|</span> BAKTI <span
+						class="separator">|</span> UNTUK NEGERI</h3>
 			</div>
 		</section>
 
@@ -288,6 +288,11 @@
 		</div>
 	</footer>
 
+	<!-- Tombol Scroll to Top -->
+	<button id="scroll-to-top" class="scroll-to-top-btn" title="Kembali ke atas">
+		<i class="fas fa-arrow-up"></i>
+	</button>
+
 	<script>
 		// JavaScript untuk toggle menu mobile
 		document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
@@ -334,6 +339,32 @@
 
 		// Ganti gambar setiap 4 detik
 		setInterval(changeHeroImage, 3000);
+
+		// JavaScript untuk tombol scroll to top
+		const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+		// Fungsi untuk menampilkan/menyembunyikan tombol
+		function toggleScrollToTopBtn() {
+			if (window.scrollY > 300) { // Tampilkan tombol setelah scroll 300px
+				scrollToTopBtn.classList.add('show');
+			} else {
+				scrollToTopBtn.classList.remove('show');
+			}
+		}
+
+		// Fungsi untuk scroll ke atas
+		function scrollToTop() {
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth'
+			});
+		}
+
+		// Event listener untuk scroll
+		window.addEventListener('scroll', toggleScrollToTopBtn);
+
+		// Event listener untuk klik tombol
+		scrollToTopBtn.addEventListener('click', scrollToTop);
 	</script>
 </body>
 </html>
