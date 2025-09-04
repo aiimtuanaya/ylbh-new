@@ -204,7 +204,7 @@ a:hover {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://kdhplaw.com/wp-content/uploads/2020/08/law-firm-surabaya-kantor-hukum-pengacara-beautiful-cityscape-of-an-urban-city-shot-from-above.jpg') no-repeat center center/cover;
+    position: relative;
     height: 750px; /* Sesuaikan tinggi hero */
     display: flex;
     align-items: center;
@@ -212,11 +212,35 @@ a:hover {
     text-align: center;
     color: var(--white);
     padding-top: 80px; /* Untuk mengkompensasi fixed header */
+    overflow: hidden;
+}
+
+.hero-section #hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+    z-index: 0;
 }
 
 .hero-content {
     max-width: 800px;
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-subtitle {
@@ -302,6 +326,9 @@ a:hover {
     width: 80px;
     height: 80px;
     margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .service-title {
@@ -354,11 +381,15 @@ a:hover {
 }
 
 .team-photo {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
+    width: auto;
+    max-width: 180px;
+    height: 250px;
+    object-fit: cover;
     border-radius: 5px;
     margin-bottom: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .member-name {
@@ -397,7 +428,11 @@ a:hover {
     width: 80px;
     height: 80px;
     margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 .category-title {
     font-size: 1.4rem;
@@ -415,6 +450,7 @@ a:hover {
     font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1px;
+    color: var(--secondary-color);
 }
 
 .cta-text .separator {
@@ -624,6 +660,38 @@ a:hover {
     .footer-widget {
         text-align: center;
         padding: 0;
+    }
+}
+/* Additional responsive improvements */
+.container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.team-member, .service-item, .category-item, .news-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.team-grid, .service-grid, .category-grid, .news-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+@media (min-width: 993px) {
+    .team-grid, .service-grid, .category-grid, .news-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
     }
 }
 
