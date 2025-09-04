@@ -6,6 +6,7 @@
     --light-bg: #f9f9f9;
     --dark-bg: #222;
     --white: #fff;
+    --accent-color: #a08f72; /* Slightly darker gold for hover */
 }
 
 * {
@@ -103,19 +104,19 @@ a:hover {
     top: 0;
     left: 0;
     z-index: 1000;
-    padding: 20px 0;
+    padding: 15px 0;
     transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
 .main-header.sticky {
     background-color: var(--primary-color);
-    padding: 10px 0;
+    padding: 8px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .logo-container {
     float: left;
-    height: 80px; /* Sesuaikan tinggi logo */
+    height: 60px; /* Sesuaikan tinggi logo */
     display: flex;
     align-items: center;
 }
@@ -148,6 +149,13 @@ a:hover {
     font-weight: 400;
     text-transform: uppercase;
     font-size: 0.9rem;
+}
+
+.dropdown-arrow {
+    vertical-align: middle;
+    margin-left: 5px;
+    font-size: 0.8em;
+    color: var(--white);
 }
 
 .main-header.sticky .main-menu .menu-item a {
@@ -191,6 +199,9 @@ a:hover {
     cursor: pointer;
     padding: 10px;
     margin-top: 15px;
+    width: 40px;
+    height: 30px;
+    position: relative;
 }
 
 .mobile-menu-bar {
@@ -200,6 +211,21 @@ a:hover {
     background-color: var(--white);
     margin: 6px 0;
     transition: 0.4s;
+    border-radius: 2px;
+    position: absolute;
+    left: 5px;
+}
+
+.mobile-menu-bar:nth-child(1) {
+    top: 0;
+}
+
+.mobile-menu-bar:nth-child(2) {
+    top: 8px;
+}
+
+.mobile-menu-bar:nth-child(3) {
+    top: 16px;
 }
 
 /* Hero Section */
@@ -363,13 +389,13 @@ a:hover {
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 40px;
     margin-top: 40px;
 }
 
 .team-member {
     background-color: var(--white);
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-align: center;
@@ -382,8 +408,8 @@ a:hover {
 
 .team-photo {
     width: auto;
-    max-width: 180px;
-    height: 250px;
+    max-width: 250px;
+    height: 300px;
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -393,12 +419,12 @@ a:hover {
 }
 
 .member-name {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
 }
 
 .member-role {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #777;
     text-transform: uppercase;
 }
@@ -511,12 +537,15 @@ a:hover {
     background-color: var(--primary-color);
     color: var(--white);
     padding-top: 40px;
+    text-align: center;
 }
 
 .footer-widgets {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding-bottom: 30px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
@@ -526,11 +555,14 @@ a:hover {
     min-width: 280px;
     margin-bottom: 20px;
     padding: 0 15px;
+    text-align: center;
 }
 
 .footer-logo {
     max-width: 200px;
     height: auto;
+    margin: 0 auto;
+    display: block;
 }
 
 .contact-info p {
@@ -548,6 +580,11 @@ a:hover {
 
 .social-links {
     margin-top: 20px;
+}
+
+.social-links iframe {
+    display: block;
+    margin: 0 auto;
 }
 
 .social-icon {
@@ -624,7 +661,7 @@ a:hover {
     }
 
     .main-header .logo-container {
-        height: 60px; /* Adjust logo size for mobile */
+        height: 50px; /* Adjust logo size for mobile */
     }
 
     .hero-section {

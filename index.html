@@ -5,11 +5,14 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>YLBH BAKTI UNTUK NEGERI</title>
+	<link rel="icon" type="image/png" href="aset/favicon.ico" />
 	<link rel="stylesheet" href="style.css" />
 	<!-- Opsional: Tambahkan link font dari Google Fonts jika diperlukan -->
 	<link
 		href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap"
 		rel="stylesheet">
+	<!-- Font Awesome for icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 	<!-- Opsional: Tambahkan link font Copperplate jika Anda memiliki file fontnya atau menggunakan CDN -->
 	<!-- <link rel="stylesheet" href="path/to/copperplate-font.css"> -->
 </head>
@@ -20,16 +23,16 @@
 			<div class="logo-container">
 				<a href="index.html">
 					<!-- Ganti dengan path gambar logo Anda -->
-					<img src="aset/favicon.png" alt="Kogin Diputro Harymbawa & Partners Logo" class="logo-img">
+					<img src="aset/favicon.ico" alt="favicon ylbh_maluku" class="logo-icon">
 				</a>
 			</div>
 			<nav class="top-navigation">
 				<ul class="main-menu">
 					<li class="menu-item current-menu-item"><a href="index.html">Beranda</a></li>
 					<li class="menu-item"><a href="#about-us">Tentang Kami</a></li>
-					<li class="menu-item"><a href="#services">Layanan KDHP</a></li>
+					<li class="menu-item"><a href="#services">Layanan Kami</a></li>
 					<li class="menu-item has-children">
-						<a href="#our-team">Tim Kami</a>
+						<a href="#our-team">Tim Kami <i class="fas fa-chevron-down dropdown-arrow"></i></a>
 						<ul class="sub-menu">
 							<li class="menu-item"><a href="#partners-profile">Partners Profile</a></li>
 							<li class="menu-item"><a href="#associates">Associates</a></li>
@@ -42,20 +45,22 @@
 			</nav>
 			<div class="mobile-menu-toggle">
 				<span class="mobile-menu-bar"></span>
+				<span class="mobile-menu-bar"></span>
+				<span class="mobile-menu-bar"></span>
 			</div>
 		</div>
 	</header>
 
 	<div id="main-content">
-<section class="hero-section">
-	<img id="hero-image" src="aset/gedung1.jpeg" alt="Hero Image" />
-	<div class="hero-content">
-		<p class="hero-subtitle">SELAMAT DATANG DI</p>
-		<h1 class="hero-title">WEBSITE RESMI YLBH</h1>
-		<p class="hero-tagline">BAKTI UNTUK NEGERI</p>
-		<a href="#about-us" class="btn btn-primary">Tentang Kami</a>
-	</div>
-</section>
+		<section class="hero-section">
+			<img id="hero-image" src="aset/gedung1.jpeg" alt="Hero Image" />
+			<div class="hero-content">
+				<p class="hero-subtitle">SELAMAT DATANG DI</p>
+				<h1 class="hero-title">WEBSITE RESMI YLBH</h1>
+				<p class="hero-tagline">BAKTI UNTUK NEGERI</p>
+				<a href="#about-us" class="btn btn-primary">Tentang Kami</a>
+			</div>
+		</section>
 
 		<section id="about-us" class="section-padding about-section">
 			<div class="container">
@@ -75,8 +80,11 @@
 							jasa hukum terbaik bagi kepentingan (bisnis) klien kami, guna meraih kesuksesan yang mereka
 							impikan.</p>
 					</div>
+
 					<div class="col-half">
 						<!-- Gambar atau elemen lain bisa ditambahkan di sini -->
+						<img src="aset/fotopengacara.webp" alt="Foto Pengacara"
+							style="width: 100%; height: auto; border-radius: 8px;">
 					</div>
 				</div>
 			</div>
@@ -85,7 +93,7 @@
 		<section id="services" class="section-padding services-section bg-light">
 			<div class="container text-center">
 				<p class="section-subtitle">KEAHLIAN KAMI</p>
-				<h2 class="section-heading">Layanan KDHP</h2>
+				<h2 class="section-heading">Layanan Kami</h2>
 				<div class="service-grid">
 					<div class="service-item">
 						<img src="https://kdhplaw.com/wp-content/uploads/2020/08/law-firm-surabaya-kantor-hukum-pengacara-dispute-settlement.png"
@@ -253,18 +261,14 @@
 	<footer id="contact-us" class="main-footer">
 		<div class="container clearfix">
 			<div class="footer-widgets">
-				<div class="footer-widget">
-					<img src="https://kdhplaw.com/wp-content/uploads/2020/08/law-firm-surabaya-kantor-hukum-pengacara-kdhp-gold-3-300x194.png"
-						alt="KDHP Law Footer Logo" class="footer-logo">
-				</div>
-				<div class="footer-widget">
-					<!-- Widget kosong atau bisa diisi konten lain -->
-				</div>
+
+				<img src="aset/favicon-96x96.png" alt="KDHP Law Footer Logo" class="footer-logo">
+
 				<div class="footer-widget contact-info">
-					<p>Jl. Bintoro No.19, DR. Soetomo, Kec. Tegalsari, Surabaya, Jawa Timur 60264</p>
+					<p>Jl. D. I. Panjaitan No.19 Lantai 5, Uritetu, Kec. Sirimau, Kota Ambon, Maluku</p>
 					<p>&nbsp;</p>
-					<p><a href="tel:+6281803221656">+62 818 0322 1656</a><br>
-						<a href="mailto:info@kdhplaw.com">info@kdhplaw.com</a>
+					<p><a href="tel:+6281803221656">+62 81122334455</a><br>
+						<a href="mailto:ylbh_maluku@gmail.com">ylbh_maluku@gmail.com</a>
 					</p>
 					<p class="social-links">
 						<iframe
@@ -277,8 +281,8 @@
 		</div>
 		<div class="footer-bottom">
 			<div class="container clearfix">
-				<p id="footer-info">© 2025 <a href="index.html">YLBH Bakti Untuk Negeri</a>. All rights reserved. Developed by <a
-						href="https://YLBH.com/" target="_blank" class="nectarfooter">YLBH.</a></p>
+				<p id="footer-info">© 2025 <a href="index.html">YLBH Bakti Untuk Negeri</a>. All rights reserved.
+					Developed by <a href="https://YLBH.com/" target="_blank" class="nectarfooter">YLBH.</a></p>
 			</div>
 		</div>
 	</footer>
@@ -318,7 +322,6 @@
 			currentImageIndex = (currentImageIndex % totalImages) + 1;
 			heroImage.src = `aset/gedung${currentImageIndex}.jpeg`;
 		}
-
 		// Ganti gambar setiap 4 detik
 		setInterval(changeHeroImage, 4000);
 	</script>
