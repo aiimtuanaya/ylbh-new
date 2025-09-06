@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tim Lengkap - YLBH BAKTI UNTUK NEGERI</title>
+    <link rel="icon" type="image/png" href="aset/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Additional styles for the team listing page */
+        .team-listing-section {
+            padding: 60px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .team-member-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .team-member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .team-member-photo {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+        
+        .team-member-info {
+            padding: 20px;
+        }
+        
+        .team-member-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .team-member-role {
+            color: #990a0ad0;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .team-member-bio {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .view-profile-btn {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: #dba64dbf;
+            color: rgb(122, 120, 120);
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .view-profile-btn:hover {
+            background-color: #1a252f;
+        }
+        
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            margin: 5px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: #2c3e50;
+            color: white;
+            border-color: #2c3e50;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container clearfix">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="aset/favicon.ico" alt="favicon ylbh_maluku" class="logo-icon">
+                </a>
+            </div>
+            <nav class="top-navigation">
+                <ul class="main-menu">
+                    <li class="menu-item"><a href="index.html">Beranda</a></li>
+                    <li class="menu-item"><a href="index.html#about-us">Tentang Kami</a></li>
+                    <li class="menu-item"><a href="index.html#services">Layanan Kami</a></li>
+                    <li class="menu-item has-children current-menu-item">
+                        <a href="index.html#our-team">Tim Kami <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                        <ul class="sub-menu">
+                            <li class="menu-item"><a href="index.html#partners-profile">Partners Profile</a></li>
+                            <li class="menu-item"><a href="index.html#associates">Associates</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="index.html#news">Berita</a></li>
+                    <li class="menu-item"><a href="karir.html">Karir</a></li>
+                    <li class="menu-item"><a href="index.html#contact-us">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <span class="mobile-menu-bar"></span>
+                <span class="mobile-menu-bar"></span>
+                <span class="mobile-menu-bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <div id="main-content">
+        <section class="page-hero-section" style="background-image: url('aset/gedung2.jpeg');">
+            <div class="container text-center">
+                <h1 class="page-title">Tim Kami</h1>
+                <p class="page-subtitle">Bertemu dengan para ahli hukum yang berdedikasi di YLBH Bakti Untuk Negeri</p>
+            </div>
+        </section>
+
+        <section class="team-listing-section">
+            <div class="container">
+                <h2 class="section-title">Anggota Tim YLBH</h2>
+                <p class="section-subtitle">Tim profesional kami siap memberikan layanan hukum terbaik untuk Anda</p>
+                
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="pembina">Pembina</button>
+                    <button class="filter-btn" data-filter="pengurus">Pengurus</button>
+                    <button class="filter-btn" data-filter="litigasi">Litigasi</button>
+                    <button class="filter-btn" data-filter="non-litigasi">Non-Litigasi</button>
+                    <button class="filter-btn" data-filter="staf">Staf</button>
+                </div>
+                
+                <div class="team-grid">
+                    <!-- Malik Raudhi Tuasamu -->
+                    <div class="team-member-card" data-category="pembina">
+                        <img src="aset/malik.webp" alt="Adv. Malik Raudhi Tuasamu" class="team-member-photo">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Adv. Malik Raudhi Tuasamu, SH. I., CPM., CPL</h3>
+                            <p class="team-member-role">Ketua Pembina YLBH Bakti Untuk Negeri</p>
+                            <p class="team-member-bio">Memimpin pengawasan strategis organisasi dan menetapkan arah kebijakan utama lembaga.</p>
+                            <a href="profil-malik.html" class="view-profile-btn">Lihat Profil</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Akbar F.A Salampessy -->
+                    <div class="team-member-card" data-category="pengurus">
+                        <img src="aset/akbar.webp" alt="Adv. Akbar F.A Salampessy" class="team-member-photo">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Adv. Akbar F.A Salampessy</h3>
+                            <p class="team-member-role">Ketua Pengurus</p>
+                            <p class="team-member-bio">Ahli dalam hukum perdata termasuk wanprestasi, sengketa lahan, hutang-piutang, subrogasi, cessie, dan sengketa bisnis.</p>
+                            <a href="akbar-detail.html" class="view-profile-btn">Lihat Profil</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Rahmat Sandi Tatisina -->
+                    <div class="team-member-card" data-category="pengurus">
+                        <img src="aset/rahmatsandi.webp" alt="Adv. Rahmat Sandi Tatisina" class="team-member-photo">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Adv. Rahmat Sandi Tatisina, S.H</h3>
+                            <p class="team-member-role">Koordinator YLBH Cabang Seram Bagian Barat</p>
+                            <p class="team-member-bio">Memimpin operasional YLBH di wilayah Seram Bagian Barat dan sekitarnya.</p>
+                            <a href="rahmatsandi-detail.html" class="view-profile-btn">Lihat Profil</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Ainul Chasanah -->
+                    <div class="team-member-card" data-category="pengurus">
+                        <img src="aset/ainun.webp" alt="Adv. Ainul Chasanah" class="team-member-photo">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Adv. Ainul Chasanah, SH., MH.</h3>
+                            <p class="team-member-role">Pengurus Divisi Branding dan Kreatif</p>
+                            <p class="team-member-bio">Mengelola branding dan komunikasi visual organisasi serta mengembangkan materi kreatif.</p>
+                            <a href="ainul-detail.html" class="view-profile-btn">Lihat Profil</a>
+                        </div>
+                    </div>
+                    
+                    <!-- S. Abdul Madjid Kabalmay -->
+                    <div class="team-member-card" data-category="pembina">
+                        <img src="aset/abdulmajid.webp" alt="Adv. S. Abdul Madjid Kabalmay" class="team-member-photo">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Adv. S. Abdul Madjid Kabalmay, SH.MH.</h3>
+                            <p class="team-member-role">Pembina YLBH</p>
+                            <p class="team-member-bio">Bagian dari tim pembina yang menetapkan arah kebijakan lembaga dan memberikan nasihat strategis.</p>
+                            <a href="abdulmajid-detail.html" class="view-profile-btn">Lihat Profil</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Ayu Saadatuzahrah -->
+                    <div class="team-member-card" data-category="staf">
+                        <img src="aset/ayu.webp" alt="Adv. Ayu Saadatuzahrah" class="team-member-photo">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Adv. Ayu Saadatuzahrah</h3>
+                            <p class="team-member-role">Anggota</p>
+                            <p class="team-member-bio">Berkontribusi dalam berbagai kasus hukum dan memberikan dukungan kepada tim utama.</p>
+                            <a href="ayu-detail.html" class="view-profile-btn">Lihat Profil</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Rais Mahu -->
+                    <div class="team-member-card" data-category="staf">
+                        <img src="aset/raismahu.webp" alt="Rais Mahu" class="team-member-photo">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Rais Mahu, SH</h3>
+                            <p class="team-member-role">Paralegal & Direktur Seram Post</p>
+                            <p class="team-member-bio">Menangani tugas paralegal dan memimpin media Seram Post untuk penyebaran informasi hukum.</p>
+                            <a href="raismahu-detail.html" class="view-profile-btn">Lihat Profil</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Iftin Yuninda Hart -->
+                    <div class="team-member-card" data-category="litigasi">
+                        <img src="aset/iftin.webp" alt="Iftin Yuninda Hart" class="team-member-photo">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Iftin Yuninda Hart</h3>
+                            <p class="team-member-role">Divisi Advokasi, Litigasi, Riset, dan Kajian Hukum</p>
+                            <p class="team-member-bio">Berfokus pada penelitian hukum, penyusunan kajian, dan mendukung proses litigasi.</p>
+                            <a href="iftin-detail.html" class="view-profile-btn">Lihat Profil</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Alimin Maruapey -->
+                    <div class="team-member-card" data-category="pengurus">
+                        <img src="aset/alimin.webp" alt="Adv. Alimin Maruapey" class="team-member-photo">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Adv. Alimin Maruapey, SH</h3>
+                            <p class="team-member-role">Bendahara Umum YLBH</p>
+                            <p class="team-member-bio">Mengelola keuangan organisasi dan bertanggung jawab atas transparansi penggunaan dana.</p>
+                            <a href="alimin-detail.html" class="view-profile-btn">Lihat Profil</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Wahyuni Boeng -->
+                    <div class="team-member-card" data-category="staf">
+                        <img src="aset/wahyuni.webp" alt="Wahyuni Boeng" class="team-member-photo">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Wahyuni Boeng S.H</h3>
+                            <p class="team-member-role">Pengurus Bagian Staf Legal</p>
+                            <p class="team-member-bio">Memberikan dukungan administrasi hukum dan membantu penyiapan dokumen legal.</p>
+                            <a href="wahyuni-detail.html" class="view-profile-btn">Lihat Profil</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Rifhaldi Rahman -->
+                    <div class="team-member-card" data-category="litigasi">
+                        <img src="aset/rifaldi.webp" alt="Adv. Rifhaldi Rahman" class="team-member-photo">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Adv. Rifhaldi Rahman</h3>
+                            <p class="team-member-role">Divisi Advokasi, Litigasi, Riset, dan Kajian Hukum</p>
+                            <p class="team-member-bio">Ahli dalam menangani kasus litigasi dan melakukan penelitian mendalam untuk pengembangan strategi hukum.</p>
+                            <a href="rifaldi-detail.html" class="view-profile-btn">Lihat Profil</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Fatima Izayani Tuanaya -->
+                    <div class="team-member-card" data-category="non-litigasi">
+                        <img src="aset/fatima.webp" alt="Adv. Fatima Izayani Tuanaya" class="team-member-photo">
+                        <div class="team-member-info">
+                            <h3 class="team-member-name">Adv. Fatima Izayani Tuanaya, S.H</h3>
+                            <p class="team-member-role">Legal Officer Staff - Cabang Masohi</p>
+                            <p class="team-member-bio">Menangani layanan konsultasi hukum non-litigasi dan mediasi di cabang Masohi.</p>
+                            <a href="fatima-detail.html" class="view-profile-btn">Lihat Profil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact-us" class="main-footer">
+        <div class="container clearfix">
+            <div class="footer-widgets">
+                <img src="aset/favicon-96x96.png" alt="YLBH Law Footer Logo" class="footer-logo">
+
+                <div class="footer-widget">
+                    <h4>Tentang YLBH Bakti Untuk Negeri</h4>
+                    <p>Lembaga bantuan hukum yang berkomitmen memberikan akses keadilan bagi seluruh lapisan masyarakat,
+                        khususnya bagi kelompok rentan dan marginal.</p>
+                </div>
+
+                <div class="footer-widget contact-info">
+                    <h4>Kontak Kami</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. D. I. Panjaitan No.19 Lantai 5, Uritetu, Kec. Sirimau,
+                        Kota Ambon, Maluku</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+6281803221656">+62 81122334455</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:ylbh_maluku@gmail.com">ylbh_maluku@gmail.com</a>
+                    </p>
+                    <p><i class="fas fa-clock"></i> Senin - Jumat: 08.00 - 16.00 WIB<br>Sabtu: 08.00 - 12.00 WIB</p>
+                </div>
+
+                <div class="footer-widget">
+                    <h4>Layanan Cepat</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Layanan Hukum</a></li>
+                        <li><a href="index.html#news">Artikel Hukum</a></li>
+                        <li><a href="index.html#our-team">Konsultasi Online</a></li>
+                        <li><a href="karir.html">Karir</a></li>
+                        <li><a href="kebijakan-privasi.html">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-widget">
+                    <h4>Lokasi Kami</h4>
+                    <div class="social-links">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d591.8584375130155!2d128.1842500439418!3d-3.693074654458759!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d6ce94e634b0647%3A0xf09a03594cfe0ab2!2sLaw%20Office%20Akbar%20Salampessy%2C%20S.H%20and%20Partners!5e0!3m2!1sid!2sid!4v1757004008541!5m2!1sid!2sid"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container clearfix">
+                <p id="footer-info">© 2025 <a href="index.html">YLBH Bakti Untuk Negeri</a>. All rights reserved.
+                    Developed by <a href="https://YLBH.com/" target="_blank" class="nectarfooter">YLBH Team</a>.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-to-top" class="scroll-to-top-btn" title="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
+            document.querySelector('.main-menu').classList.toggle('active');
+        });
+
+        // Sticky header
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // Dropdown menu for mobile
+        document.querySelectorAll('.main-menu .has-children > a').forEach(item => {
+            item.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    this.nextElementSibling.classList.toggle('active');
+                }
+            });
+        });
+
+        // Scroll to top button
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        function toggleScrollToTopBtn() {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        }
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        window.addEventListener('scroll', toggleScrollToTopBtn);
+        scrollToTopBtn.addEventListener('click', scrollToTop);
+
+        // Filter functionality for team members
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                // Show/hide team members based on filter
+                document.querySelectorAll('.team-member-card').forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        if (card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
