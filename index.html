@@ -41,11 +41,12 @@
 					<li class="menu-item"><a href="#contact-us">Kontak</a></li>
 				</ul>
 			</nav>
-			<div class="mobile-menu-toggle">
-				<span class="mobile-menu-bar"></span>
-				<span class="mobile-menu-bar"></span>
-				<span class="mobile-menu-bar"></span>
+			<div class="mobile-menu-toggle" aria-label="Menu">
+				<svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path d="M7 10l5 5 5-5" />
+				</svg>
 			</div>
+
 		</div>
 	</header>
 
@@ -392,32 +393,36 @@
 		</button>
 
 		<script>
-			// JavaScript untuk toggle menu mobile
-			document.querySelector('.mobile-menu-toggle').addEventListener('click', function () {
-				document.querySelector('.main-menu').classList.toggle('active');
+			// Toggle menu mobile + rotasi ikon
+			const menuToggle = document.querySelector('.mobile-menu-toggle');
+			const mainMenu = document.querySelector('.main-menu');
+
+			menuToggle.addEventListener('click', () => {
+				mainMenu.classList.toggle('active');
+				menuToggle.classList.toggle('active');
 			});
 
-			// JavaScript untuk efek sticky header (opsional, bisa disesuaikan)
-			window.addEventListener('scroll', function () {
+			// Sticky header
+			window.addEventListener('scroll', () => {
 				const header = document.querySelector('.main-header');
-				if (window.scrollY > 50) { // Ubah nilai 50 sesuai kebutuhan
+				if (window.scrollY > 50) {
 					header.classList.add('sticky');
 				} else {
 					header.classList.remove('sticky');
 				}
 			});
 
-			// JavaScript untuk sub-menu dropdown (opsional)
+			// Submenu dropdown (aktif hanya di mobile)
 			document.querySelectorAll('.main-menu .has-children > a').forEach(item => {
 				item.addEventListener('click', function (e) {
-					if (window.innerWidth <= 768) { // Hanya aktif di mobile
+					if (window.innerWidth <= 768) {
 						e.preventDefault();
 						this.nextElementSibling.classList.toggle('active');
 					}
 				});
 			});
 
-			// JavaScript untuk slideshow gambar hero dengan efek morph (crossfade)
+			// Slideshow Hero
 			let currentImageIndex = 1;
 			const totalImages = 5;
 			const currentHeroImage = document.getElementById('hero-image');
@@ -432,12 +437,12 @@
 					currentHeroImage.src = nextHeroImage.src;
 					nextHeroImage.style.opacity = 0;
 					currentImageIndex = nextIndex;
-				}, 400); // Durasi transisi sama dengan CSS transition (0.2s)
+				}, 400);
 			}
 
 			// Slideshow Kegiatan
 			let currentKegiatanIndex = 1;
-			const totalKegiatan = 8; // ganti sesuai jumlah foto kegiatan (kegiatan1.webp, kegiatan2.webp, dst)
+			const totalKegiatan = 8;
 			const currentKegiatanImage = document.getElementById('kegiatan-image');
 			const nextKegiatanImage = document.getElementById('next-kegiatan-image');
 
@@ -453,25 +458,21 @@
 				}, 400);
 			}
 
-			// Ganti gambar setiap 4 detik
-			setInterval(changeKegiatanImage, 4000);
+			// Interval slideshow
+			setInterval(changeKegiatanImage, 4000); // kegiatan tiap 4 detik
+			setInterval(changeHeroImage, 4000);     // hero tiap 4 detik
 
-			// Ganti gambar setiap 4 detik
-			setInterval(changeHeroImage, 3000);
-
-			// JavaScript untuk tombol scroll to top
+			// Scroll to top
 			const scrollToTopBtn = document.getElementById('scroll-to-top');
 
-			// Fungsi untuk menampilkan/menyembunyikan tombol
 			function toggleScrollToTopBtn() {
-				if (window.scrollY > 300) { // Tampilkan tombol setelah scroll 300px
+				if (window.scrollY > 300) {
 					scrollToTopBtn.classList.add('show');
 				} else {
 					scrollToTopBtn.classList.remove('show');
 				}
 			}
 
-			// Fungsi untuk scroll ke atas
 			function scrollToTop() {
 				window.scrollTo({
 					top: 0,
@@ -479,14 +480,10 @@
 				});
 			}
 
-			// Event listener untuk scroll
 			window.addEventListener('scroll', toggleScrollToTopBtn);
-
-			// Event listener untuk klik tombol
 			scrollToTopBtn.addEventListener('click', scrollToTop);
-
-
 		</script>
+
 	</div>
 </body>
 

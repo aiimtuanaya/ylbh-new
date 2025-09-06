@@ -61,6 +61,7 @@ body {
 .kegiatan-section .next-hero-image {
   object-fit: cover;
   object-position: center top; /* atau center bottom, tergantung fokus gambar */
+  transition: opacity 0.4s ease-in-out;
 }
 
 /* Perkecil ukuran huruf + tambahkan bayangan */
@@ -72,7 +73,7 @@ body {
 .kegiatan-section .hero-content .hero-title {
   font-size: 1.8rem;
   letter-spacing: 2px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .kegiatan-section .hero-content .hero-description {
@@ -179,12 +180,12 @@ a:hover {
   display: inline-block;
   padding: 4px 10px;
   border-radius: 5px;
-  font-weight: 700;
+  font-weight: 500;
   text-transform: uppercase;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 /* Tombol primary (utama) */
@@ -204,7 +205,7 @@ a:hover {
 .btn-secondary {
   background-color: transparent;
   color: var(--primary-color);
-  border: 2px solid var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 /* Effect hover untuk tombol secondary */
@@ -410,8 +411,8 @@ a:hover {
 
 /* Gambar hero yang sedang aktif */
 .hero-section .current-hero-image,
-        /* Gambar hero berikutnya (untuk transisi) */
-        .hero-section .next-hero-image {
+/* Gambar hero berikutnya (untuk transisi) */
+  .hero-section .next-hero-image {
   position: absolute;
   top: 0;
   left: 0;
@@ -1205,8 +1206,39 @@ a:hover {
 
   /* Tampilkan toggle menu untuk mobile */
   .mobile-menu-toggle {
-    display: block;
-  }
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  border: 1.1px solid #975f0b9f;
+  background: rgba(230, 210, 173, 0.288);
+  display: grid;
+  place-items: center;     /* center SVG */
+  cursor: pointer;
+  z-index: 999;
+  transition: background .3s, transform .3s;
+  padding: 0;
+}
+
+.mobile-menu-toggle .arrow-icon {
+  width: 21px;              /* ukuran panah sesuai lingkaran */
+  height: 21px;
+  fill: none;              /* transparan isi */
+  stroke: #b9a365b6;            /* warna panah */
+  stroke-width: 2;
+  display: block;
+}
+
+/* Hover effect */
+.mobile-menu-toggle:hover { 
+  background: rgba(187, 185, 177, 0.534);
+}
+
+/* Rotasi saat menu aktif */
+.mobile-menu-toggle.active .arrow-icon {
+  transform: rotate(180deg);
+  transition: transform .3s ease;
+}
+
 
   /* Penyesuaian ukuran logo untuk mobile */
   .main-header .logo-container {
@@ -1996,8 +2028,8 @@ iframe {
   }
 
   .btn {
-    padding: 10px 20px;
-    font-size: 0.9em;
+    padding: 1px 3px;
+    font-size: 0.8em;
   }
 
   .section-heading {
