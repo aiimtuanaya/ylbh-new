@@ -478,6 +478,11 @@ a:hover {
   min-width: 300px;
 }
 
+/* Membuat paragraf di about-us rata kanan kiri */
+#about-us p {
+  text-align: justify;
+}
+
 .about-stats {
   display: flex;
   justify-content: space-around;
